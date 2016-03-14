@@ -33,7 +33,7 @@ public class Actionneur {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			gest.switchStateLum1(!etat);
+			gest.switchStateLum1(!etat, 500);
 			
 			// Création du listener qui écoute sur la maqutte 
 			listen = new Listener(link);

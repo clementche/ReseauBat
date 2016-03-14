@@ -106,12 +106,12 @@ public class Gestion {
 	}
 	
 	
-	public void switchStateLum1(boolean etat){
+	public void switchStateLum1(boolean etat, int speed){
 		try {
 			
 			try {
+				Thread.sleep(speed);
 				pc.write(new GroupAddress("0/1/1"), etat);
-				Thread.sleep(150);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -129,12 +129,12 @@ public class Gestion {
 	}
 	
 	
-	public void switchStateLum2(boolean etat){
+	public void switchStateLum2(boolean etat, int speed){
 		try {
 			
 			try {
+				Thread.sleep(speed);
 				pc.write(new GroupAddress("0/1/2"), etat);
-				Thread.sleep(150);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -151,12 +151,12 @@ public class Gestion {
 		}
 	}
 	
-	public void switchStateLum3(boolean etat){
+	public void switchStateLum3(boolean etat, int speed){
 		try {
 			
 			try {
+				Thread.sleep(speed);
 				pc.write(new GroupAddress("0/1/3"), etat);
-				Thread.sleep(150);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -173,12 +173,12 @@ public class Gestion {
 		}
 	}
 	
-	public void switchStateLum4(boolean etat){
+	public void switchStateLum4(boolean etat, int speed){
 		try {
 			
 			try {
+				Thread.sleep(speed);
 				pc.write(new GroupAddress("0/1/4"), etat);
-				Thread.sleep(150);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -253,15 +253,15 @@ public class Gestion {
 	public void chenillar(int speed, boolean start){
 		// ecrire la fonction chenillar 
 		while(start){
-			this.switchStateLum1(true);
-			this.switchStateLum2(true);
-			this.switchStateLum1(false);
-			this.switchStateLum3(true);
-			this.switchStateLum2(false);
-			this.switchStateLum4(true);
-			this.switchStateLum3(false);
-			this.switchStateLum1(true);
-			this.switchStateLum4(false);
+			this.switchStateLum1(true , speed);
+			this.switchStateLum2(true , speed);
+			this.switchStateLum1(false , speed);
+			this.switchStateLum3(true , speed);
+			this.switchStateLum2(false , speed);
+			this.switchStateLum4(true , speed);
+			this.switchStateLum3(false , speed);
+			this.switchStateLum1(true , speed);
+			this.switchStateLum4(false , speed);
 		}
 	}
 	
