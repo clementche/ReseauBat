@@ -13,6 +13,7 @@ public class Listener {
 	public KNXNetworkLinkIP netLink;
 	private String add;
 	private Boolean appuie  = false;
+	Gestion gest =  new Gestion(netLink);
 	int speed = 2000;
 	
 	// Constructeur
@@ -34,6 +35,7 @@ public class Listener {
 				if (speed >= 500 ) speed -= 50;
 				else speed = 1000;
 				// TODO mettre la fonction chenillar 
+				gest.chenillar(speed, appuie);
 				System.out.println("targetadress " + ((CEMILData)arg0.getFrame()).getDestination());
 			}
 					
