@@ -31,12 +31,15 @@ public class Listener {
 				System.out.println("srcadress " + arg0.getSource()); 
 				// On recupere l'adresse source pour effectuer une action en fonction de qui fait.
 				add = ((GroupAddress) arg0.getSource()).toString();
-				if(add.equals("0/2/1")){
+				if(add.equals("0/1/1")){
 					if (speed >= 500 ) speed -= 50;
-					else speed = 1000;
+					else speed = 2000;
 					gest.chenillar(speed, appuie);
 				}
-				else if (add.equals("0/2/2")){
+				else if(add.equals("0/1/2")){
+					gest.switchOff();
+				}
+				else if (add.equals("0/1/3")){
 					appuie = !appuie;
 					netLink.close();
 				}
