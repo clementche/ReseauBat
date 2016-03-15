@@ -253,6 +253,7 @@ public class Gestion {
 	public void chenillar(int speed, boolean start){
 		// ecrire la fonction chenillar 
 		while(start){
+			this.switchOff();
 			this.switchStateLum1(true , speed);
 			this.switchStateLum2(true , speed);
 			this.switchStateLum1(false , speed);
