@@ -111,8 +111,7 @@ public class Connection {
 	
 	// on se déconnecte de la maquette
 	public void disconnet(KNXNetworkLinkIP knxLink){
-		knxLink.close();
-		
+		knxLink.close();		
 		System.out.println("Connection got closed");	
 	}
 	

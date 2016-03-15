@@ -12,7 +12,7 @@ public class Listener {
 	
 	public KNXNetworkLinkIP netLink;
 	private String add;
-	private Boolean appuie  = false;
+	private Boolean appuie  = true;
 	Gestion gest =  new Gestion(netLink);
 	int speed = 2000;
 	
@@ -31,11 +31,15 @@ public class Listener {
 				System.out.println("srcadress " + arg0.getSource()); 
 				// On recupere l'adresse source pour effectuer une action en fonction de qui fait.
 				add = ((GroupAddress) arg0.getSource()).toString();
-				appuie = !appuie;
-				if (speed >= 500 ) speed -= 50;
-				else speed = 1000;
-				// TODO mettre la fonction chenillar 
-				gest.chenillar(speed, appuie);
+				if(add.equals("0/2/1")){
+					if (speed >= 500 ) speed -= 50;
+					else speed = 1000;
+					gest.chenillar(speed, appuie);
+				}
+				else if (add.equals("0/2/2")){
+					appuie = !appuie;
+					netLink.close();
+				}
 				System.out.println("targetadress " + ((CEMILData)arg0.getFrame()).getDestination());
 			}
 					

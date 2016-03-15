@@ -19,7 +19,6 @@ public class Actionneur {
 			// Permet de faire des actions sur la maquette 
 			Gestion gest = new Gestion(link);
 			Listener listen ;
-			String address;
 			
 			boolean etat = gest.getLum1();
 			if(etat)

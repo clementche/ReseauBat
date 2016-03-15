@@ -29,7 +29,7 @@ public class Gestion {
 	
 	public Boolean getLum1(){
 		try {
-			Thread.sleep(150);
+			Thread.sleep(500);
 			return pc.readBool(new GroupAddress("0/2/1"));
 		} catch (KNXFormatException e) {
 			// TODO Auto-generated catch block
@@ -49,7 +49,7 @@ public class Gestion {
 	
 	public Boolean getLum2(){
 		try {
-			Thread.sleep(150);
+			Thread.sleep(500);
 			return pc.readBool(new GroupAddress("0/2/2"));
 		} catch (KNXFormatException e) {
 			// TODO Auto-generated catch block
@@ -68,7 +68,7 @@ public class Gestion {
 	}
 	public Boolean getLum3(){
 		try {
-			Thread.sleep(150);
+			Thread.sleep(500);
 			return pc.readBool(new GroupAddress("0/2/3"));
 		} catch (KNXFormatException e) {
 			// TODO Auto-generated catch block
@@ -87,7 +87,7 @@ public class Gestion {
 	}
 	public Boolean getLum4(){
 		try {
-			Thread.sleep(150);
+			Thread.sleep(500);
 			return pc.readBool(new GroupAddress("0/2/4"));
 		} catch (KNXFormatException e) {
 			// TODO Auto-generated catch block
@@ -199,13 +199,13 @@ public class Gestion {
 		try {
 			try {
 				pc.write(new GroupAddress("0/1/1"), false);
-				Thread.sleep(150);
+				Thread.sleep(500);
 				pc.write(new GroupAddress("0/1/2"), false);
-				Thread.sleep(150);
+				Thread.sleep(500);
 				pc.write(new GroupAddress("0/1/3"), false);
-				Thread.sleep(150);
+				Thread.sleep(500);
 				pc.write(new GroupAddress("0/1/4"), false);
-				Thread.sleep(150);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -227,13 +227,13 @@ public class Gestion {
 			
 			try {
 				pc.write(new GroupAddress("0/1/1"), true);
-				Thread.sleep(150);
+				Thread.sleep(500);
 				pc.write(new GroupAddress("0/1/2"), true);
-				Thread.sleep(150);
+				Thread.sleep(500);
 				pc.write(new GroupAddress("0/1/3"), true);
-				Thread.sleep(150);
+				Thread.sleep(500);
 				pc.write(new GroupAddress("0/1/4"), true);
-				Thread.sleep(150);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
