@@ -27,68 +27,10 @@ public class Gestion {
 		}
 	}
 	
-	public Boolean getLum1(){
+	public Boolean getLum(String numLamp){
 		try {
 			Thread.sleep(500);
-			return pc.readBool(new GroupAddress("0/2/1"));
-		} catch (KNXFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		} catch (KNXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		}
-
-	}
-	
-	public Boolean getLum2(){
-		try {
-			Thread.sleep(500);
-			return pc.readBool(new GroupAddress("0/2/2"));
-		} catch (KNXFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		} catch (KNXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		}
-
-	}
-	public Boolean getLum3(){
-		try {
-			Thread.sleep(500);
-			return pc.readBool(new GroupAddress("0/2/3"));
-		} catch (KNXFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		} catch (KNXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		}
-
-	}
-	public Boolean getLum4(){
-		try {
-			Thread.sleep(500);
-			return pc.readBool(new GroupAddress("0/2/4"));
+			return pc.readBool(new GroupAddress("0/2/"+numLamp));
 		} catch (KNXFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -106,12 +48,12 @@ public class Gestion {
 	}
 	
 	
-	public void switchStateLum1(boolean etat, int speed){
+	public void switchStateLum(boolean etat, int speed, String numLamp){
 		try {
 			
 			try {
 				Thread.sleep(speed);
-				pc.write(new GroupAddress("0/1/1"), etat);
+				pc.write(new GroupAddress("0/1/" + numLamp), etat);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -129,71 +71,7 @@ public class Gestion {
 	}
 	
 	
-	public void switchStateLum2(boolean etat, int speed){
-		try {
-			
-			try {
-				Thread.sleep(speed);
-				pc.write(new GroupAddress("0/1/2"), etat);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (KNXTimeoutException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (KNXLinkClosedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (KNXFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	
-	public void switchStateLum3(boolean etat, int speed){
-		try {
-			
-			try {
-				Thread.sleep(speed);
-				pc.write(new GroupAddress("0/1/3"), etat);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (KNXTimeoutException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (KNXLinkClosedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (KNXFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	public void switchStateLum4(boolean etat, int speed){
-		try {
-			
-			try {
-				Thread.sleep(speed);
-				pc.write(new GroupAddress("0/1/4"), etat);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (KNXTimeoutException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (KNXLinkClosedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (KNXFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	
 	public void switchOff(){
 		try {
@@ -253,16 +131,15 @@ public class Gestion {
 	public void chenillar(int speed, boolean start){
 		// ecrire la fonction chenillar 
 		while(start){
-			this.switchOff();
-			this.switchStateLum1(true , speed);
-			this.switchStateLum2(true , speed);
-			this.switchStateLum1(false , speed);
-			this.switchStateLum3(true , speed);
-			this.switchStateLum2(false , speed);
-			this.switchStateLum4(true , speed);
-			this.switchStateLum3(false , speed);
-			this.switchStateLum1(true , speed);
-			this.switchStateLum4(false , speed);
+			this.switchStateLum(true , speed, "1");
+			this.switchStateLum(true , speed,"2");
+			this.switchStateLum(false , speed,"1");
+			this.switchStateLum(true , speed, "3");
+			this.switchStateLum(false , speed, "2");
+			this.switchStateLum(true , speed, "4");
+			this.switchStateLum(false , speed, "3");
+			this.switchStateLum(true , speed, "1");
+			this.switchStateLum(false , speed, "4");
 		}
 	}
 	

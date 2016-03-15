@@ -20,7 +20,7 @@ public class Actionneur {
 			Gestion gest = new Gestion(link);
 			Listener listen ;
 			
-			boolean etat = gest.getLum1();
+			boolean etat = gest.getLum("1");
 			if(etat)
 				System.out.println("La lumière 1 est allumée");
 			else 
@@ -32,9 +32,9 @@ public class Actionneur {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			gest.switchStateLum1(!etat, 500);
+			gest.switchStateLum(!etat, 500, "1");
 			
-			// Création du listener qui écoute sur la maqutte 
+			// Création du listener qui écoute sur la maquette 
 			listen = new Listener(link);
 			listen.Listen();
 			

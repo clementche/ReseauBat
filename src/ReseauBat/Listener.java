@@ -34,6 +34,7 @@ public class Listener {
 				if(add.equals("0/1/1")){
 					if (speed >= 500 ) speed -= 50;
 					else speed = 2000;
+					gest.switchOff();
 					gest.chenillar(speed, appuie);
 				}
 				else if(add.equals("0/1/2")){
