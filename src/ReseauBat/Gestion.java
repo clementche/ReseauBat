@@ -162,7 +162,7 @@ public class Gestion {
 		}
 	}
 	
-	public void milieuchenille(int speed, boolean start){
+	public void milieuChenille(int speed, boolean start){
 		this.switchOff();
 		while(start){
 			this.switchStateLum(false , speed, "2");
@@ -176,6 +176,7 @@ public class Gestion {
 		}
 		
 	}
+	
 	
 	public void chenillarInv(int speed, boolean start){
 		// ecrire la fonction chenillar 
@@ -191,6 +192,21 @@ public class Gestion {
 			this.switchStateLum(true , speed, "4");
 			this.switchStateLum(false , speed, "1");
 		}
+	}
+	
+	public void deuxDeux(int speed, boolean start){
+		this.switchOff();
+		while(start){
+			this.switchStateLum(true , speed, "1");
+			this.switchStateLum(true , speed, "2");
+			this.switchStateLum(false , speed, "1");
+			this.switchStateLum(false , speed, "2");
+			this.switchStateLum(true , speed, "4");
+			this.switchStateLum(true , speed, "3");
+			this.switchStateLum(false , speed, "4");
+			this.switchStateLum(false , speed, "3");
+		}
+		
 	}
 	
 }
