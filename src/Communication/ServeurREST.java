@@ -73,17 +73,7 @@ public class ServeurREST{
 	@Path("/changeMotif")					//Demarrer le chenillar
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public void changeMotif(){
-		int lower = 0;
-		int higher = 3;
-		int random = (int)(Math.random() * (higher-lower)) + lower;
-		
-		switch(random){
-			case 0 : gest.chenillar(500, true);
-			case 1 : gest.chenillarInv(500, true);
-			case 2 : gest.milieuChenille(500, true);
-			case 3 : gest.deuxDeux(500,true);
-		}
+	public void changeMotif(){}
 	}
 	//url : http://localhost:8080/ReseauBat/switch/runChenillar
 	
