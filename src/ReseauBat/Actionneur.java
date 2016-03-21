@@ -7,12 +7,12 @@ import tuwien.auto.calimero.link.KNXNetworkLinkIP;
 
 
 public class Actionneur {
-	
+	public static KNXNetworkLinkIP link;
 	public static void main(final String[] args)
 	{
 		// Etablissement de la connection
-			Connection conn = new Connection("192.168.0.1");
-			KNXNetworkLinkIP link;
+			Connection conn = new Connection("192.168.1.118","192.168.1.105");
+			
 			// on se connecte à la maquette 
 			link = conn.connect();
 			
@@ -41,4 +41,5 @@ public class Actionneur {
 			conn.disconnet(link);
 	
 	}
+
 }

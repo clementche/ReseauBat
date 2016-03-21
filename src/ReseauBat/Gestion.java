@@ -130,6 +130,7 @@ public class Gestion {
 	
 	public void chenillar(int speed, boolean start){
 		// ecrire la fonction chenillar 
+		this.switchOff();
 		while(start){
 			this.switchStateLum(true , speed, "1");
 			this.switchStateLum(true , speed,"2");
@@ -140,6 +141,55 @@ public class Gestion {
 			this.switchStateLum(false , speed, "3");
 			this.switchStateLum(true , speed, "1");
 			this.switchStateLum(false , speed, "4");
+		}
+	}
+	
+	
+	public void chenillar2(int speed, int start){
+		// ecrire la fonction chenillar
+		this.switchOff();
+		while(start > 0){
+			this.switchStateLum(true , speed, "1");
+			this.switchStateLum(true , speed,"2");
+			this.switchStateLum(false , speed,"1");
+			this.switchStateLum(true , speed, "3");
+			this.switchStateLum(false , speed, "2");
+			this.switchStateLum(true , speed, "4");
+			this.switchStateLum(false , speed, "3");
+			this.switchStateLum(true , speed, "1");
+			this.switchStateLum(false , speed, "4");
+			start--;
+		}
+	}
+	
+	public void milieuchenille(int speed, boolean start){
+		this.switchOff();
+		while(start){
+			this.switchStateLum(false , speed, "2");
+			this.switchStateLum(false , speed, "3");
+			this.switchStateLum(true , speed, "2");
+			this.switchStateLum(true , speed, "3");
+			this.switchStateLum(true , speed, "4");
+			this.switchStateLum(true , speed, "1");
+			this.switchStateLum(false , speed, "2");
+			this.switchStateLum(false , speed, "3");
+		}
+		
+	}
+	
+	public void chenillarInv(int speed, boolean start){
+		// ecrire la fonction chenillar 
+		this.switchOff();
+		while(start){
+			this.switchStateLum(true , speed, "4");
+			this.switchStateLum(true , speed,"3");
+			this.switchStateLum(false , speed,"4");
+			this.switchStateLum(true , speed, "2");
+			this.switchStateLum(false , speed, "3");
+			this.switchStateLum(true , speed, "1");
+			this.switchStateLum(false , speed, "2");
+			this.switchStateLum(true , speed, "4");
+			this.switchStateLum(false , speed, "1");
 		}
 	}
 	

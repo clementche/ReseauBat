@@ -20,7 +20,7 @@ public class Connection {
 	private InetAddress addressMaquette;
 	private String remoteHost;
 	// ip de l'ordi
-	private  String localHost = "192.168.1.10";
+	private  String localHost = "192.168.1.100";
 	private InetSocketAddress localEP; 
 	// port à utiliser
 	private static final int knxServerPort = KNXnetIPConnection.DEFAULT_PORT;
